@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Needlecraft Quiz</title>
+	</head>
+	
+	<body>
+	
+		<form action="" method="post">
+			<p>
+			1. What is the craft that uses a single hook to work one stitch at a time to produce a swatch of woven fabric?
+				<!-- The answer is 'd', crocheting. -->
+				<br><br>
+				<label>
+					<input type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_0" onClick="radioButtonTest(1,'a')">
+					Knitting
+				</label>
+				<br>
+				<label>
+					<input type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_1" onClick="radioButtonTest(1,'b')">
+					Crochitting
+				</label>
+				<br>
+				<label>
+					<input type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_2" onClick="radioButtonTest(1,'c')">
+					Knooking
+				</label>
+				<br>
+				<label>
+					<input type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_3" onClick="radioButtonTest(1,'d')">
+					Crocheting
+				</label>
+				<br>
+			</p>
+		</form>
+	
+		<script type="text/javascript">
+			function radioButtonTest(question, yourAnswer) {
+				// Especially this early in the game, it's just easier to program a simple array that contains all the correct answers to the test in sequence.
+				var answerArray = new Array('d');
+				
+				// Remnant from class; no 'cancel' button (yet?)
+				alert("Are you sure you want to choose that answer?");
+				
+				// If your answer and the letter in the array for the given question match, you get a "correct" message.
+				// If your answer and the letter in the array do not match, you will get a message explaining the discrepancy.
+				// I also included a programmers' "idiotproof" in case I accidentally program a capital letter in either the
+				// array or the quiz button letters.
+				if (answerArray[question - 1].toLowerCase == yourAnswer.toLowerCase()) {
+					alert("Question #" + question + ": Correct!");
+				}
+				else {
+					alert("For question #" + question + ", you answered " + yourAnswer + ".\nThe correct answer was " + answerArray[question - 1] + ".");
+				}
+			}
+		</script>
+	
+	</body>
+</html>
